@@ -1,35 +1,317 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJHblog</title>
-    <link rel="icon" type="image/png" href="https://guou123.github.io/icon.png">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>我的博客</h1>
-        <nav>
-            <ul>
-                <li><a href="#1">首页</a></li>
-                <li><a href="#关于">关于我</a></li>
-                <li><a href="#联系">联系我</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="3">
-            <h2>联系我</h2>
-            <p>如果你有任何问题或建议，请随时联系我：</p>
-            <ul>
-                <li>电子邮件：723561055@qq.com</li>
-                <li>社交媒体：github @guou123</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 DJHblog. All rights reserved.</p>
-    </footer>
-</body>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>DJHblog</title>
+        <link rel="icon" type="image/png" href="https://guou123.github.io/icon.png">
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="https://guou123.github.io/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="https://guou123.github.io/css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="https://guou123.github.io/css/templatemo-topic-listing.css" rel="stylesheet">
+
+    </head>
+    
+    <body id="top">
+
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+<!--                        <i class="bi-back"></i>-->
+                        <span>DJHblog</span>
+                    </a>
+
+                    <div class="d-lg-none ms-auto me-4">
+                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                    </div>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                            </li>
+
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_3">How it works</a>
+                            </li>
+
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                            </li>
+
+
+                        </ul>
+
+<!--                        <div class="d-none d-lg-block">-->
+<!--                            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+            </nav>
+            
+
+            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="featured-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="https://github.com/guou123">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">下载中心</h5>
+
+                                            <p class="mb-0">你需要的工具都在这</p>
+                                        </div>
+
+                                        <span class="badge bg-design rounded-pill ms-auto">戳</span>
+                                    </div>
+
+                                    <img src="https://guou123.github.io/images/image01.png" class="custom-block-image img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="https://www.cnblogs.com/djhhappy">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">博客</h5>
+
+                                            <p class="mb-0">我的博客</p>
+                                        </div>
+
+                                        <span class="badge bg-design rounded-pill ms-auto">戳</span>
+                                    </div>
+
+                                    <img src="https://guou123.github.io/images/image02.png" class="custom-block-image img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section class="timeline-section section-padding" id="section_3">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 text-center">
+                            <h2> class="text-white mb-4">How does it work?</h2>
+                        </div>
+
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <div class="timeline-container">
+                                <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                                    <div class="list-progress">
+                                        <div class="inner"></div>
+                                    </div>
+
+                                    <li>
+                                        <h4 class="text-white mb-3">Search your favourite DJHblog</h4>
+
+                                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, cumque magnam? Sequi, cupiditate quibusdam alias illum sed esse ad dignissimos libero sunt, quisquam numquam aliquam? Voluptas, accusamus omnis?</p>
+
+                                        <div class="icon-holder">
+<!--                                          <i class="bi-search"></i>-->
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <h4 class="text-white mb-3">Bookmark &amp; Keep it for yourself</h4>
+
+                                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis est vel quo, nihil repellat quia velit error modi earum similique odit labore. Doloremque, repudiandae?</p>
+
+                                        <div class="icon-holder">
+<!--                                          <i class="bi-bookmark"></i>-->
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <h4 class="text-white mb-3">Read &amp; Enjoy</h4>
+
+                                        <p class="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi vero quisquam, rem assumenda similique voluptas distinctio, iste est hic eveniet debitis ut ducimus beatae id? Quam culpa deleniti officiis autem?</p>
+
+                                        <div class="icon-holder">
+<!--                                          <i class="bi-book"></i>-->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="faq-section section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="mb-4">Frequently Asked Questions</h2>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-lg-5 col-12">
+                            <img src="https://guou123.github.io/images/image03.jpg" class="img-fluid" alt="FAQs">
+                        </div>
+
+                        <div class="col-lg-6 col-12 m-auto">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        我们在聆听你的意见
+                                        </button>
+                                    </h2>
+
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            我会聆听你的意见
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        如何找到我?
+                                    </button>
+                                    </h2>
+
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            在bing上搜索 <strong>guou123.github.io</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+<!--                                <div class="accordion-item">-->
+<!--                                    <h2 class="accordion-header" id="headingThree">-->
+<!--                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                                        Does it need to paid?-->
+<!--                                    </button>-->
+<!--                                    </h2>-->
+
+<!--                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">-->
+<!--                                        <div class="accordion-body">-->
+<!--                                            You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+        </main>
+
+<footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mb-4 pb-2">
+                        <a class="navbar-brand mb-2" href="index.html">
+<!--                            <i class="bi-back"></i>-->
+                            <span>DJHblog</span>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <h6 class="site-footer-title mb-3">Resources</h6>
+
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Home</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="https://github.com/guou123" class="site-footer-link">Downloads</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                        <h6 class="site-footer-title mb-3">Information</h6>
+
+                        <p class="text-white d-flex mb-1">
+
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <a href="mailto:723561055@qq.com" class="site-footer-link">
+                                723561055@qq.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                        <div class="dropdown">
+
+                        </div>
+
+                        <p class="copyright-text mt-lg-5 mt-4">&copy; 2025 DJHblog. All rights reserved.
+
+                        
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
 </html>
