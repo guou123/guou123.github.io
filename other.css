@@ -1,22 +1,22 @@
 /*此为笔者网站较为个性化的鼠标指针样式，可结合个人需要自行修改*/
 body {
-	cursor: https://guou123.github.io/curs/(Arrow.cur), default;
+	cursor: url(https://guou123.github.io/curs/Arrow.cur), default;
 }
 select{
-	cursor: https://guou123.github.io/curs/(Hand.cur), pointer;
+	cursor: url(https://guou123.github.io/curs/Hand.cur), pointer;
 }
 button,a:hover{
-	cursor: https://guou123.github.io/curs/(Hand2.cur), pointer;
+	cursor: url(https://guou123.github.io/curs/Hand2.cur), pointer;
 }
 input{
-	cursor:https://guou123.github.io/curs/(Help.cur), text;	
+	cursor:url(https://guou123.github.io/curs/Help.cur), text;	
 }
 textarea,input:focus{
-	cursor:https://guou123.github.io/curs/(IBeam.cur), text;	
+	cursor:url(https://guou123.github.io/curs/IBeam.cur), text;	
 }
 code{
-	cursor: https://guou123.github.io/curs/(Handwriting.cur), default;	
+	cursor: url(https://guou123.github.io/curs/Handwriting.cur), default;	
 }
 pre>code{
-	cursor: https://guou123.github.io/curs/(Copy.cur), default;	
+	cursor: url(https://guou123.github.io/curs/Copy.cur), default;	
 }
