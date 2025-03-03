@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+
+
+    <script type="text/javascript">
+  //练习
+		function showMessage(){
+			//获取用户名文本框
+			var username = document.getElementById("username");
+			//验证用户名
+			if(username.value == "20140620djh"){
+				document.write("<font color='green'>验证通过</font>");
+				window.open("https://guou123.github.io/backt")
+			}else{
+				document.write("<font color='red'>验证未通过</font>");
+				window.open("https://guou123.github.io/#")
+			}
+		}
+
+    </script>
+
+
+</head>
+<body>
+
+<input type="password" name="username" id="username"/>
+<input type="button" onClick="showMessage()" value="验证"/>
+
+
+</body>
+</html>
