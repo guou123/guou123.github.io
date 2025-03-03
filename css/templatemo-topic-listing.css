@@ -741,7 +741,7 @@ blockquote {
 
 .timeline-container .vertical-scrollable-timeline .list-progress {
   width: 8px;
-  height: 100%;
+  height: 85%;
   background-color: var(--primary-color);
   position: absolute;
   left: 52px;
