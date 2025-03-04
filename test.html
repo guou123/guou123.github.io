@@ -7,101 +7,117 @@
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body>
-    <!-- 不蒜子数据容器（隐藏） -->
+    <!-- 不蒜子数据容器（隐藏但要存在于DOM中） -->
     <div style="display: none;">
-        <span id="busuanzi_value_site_uv"></span>
-        <span id="busuanzi_value_site_pv"></span>
+        本站访客数：<span id="busuanzi_value_site_uv"></span> 人次
+        本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
     </div>
 
     <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 
 <script>
 $(document).ready(function() {
-    // 初始化空图表
+    // 初始化基础图表
     var chart = Highcharts.chart('container', {
-        chart: { type: 'bar' },
+        chart: {
+            type: 'bar',
+            events: { // 添加图表加载完成事件
+                load: initDataMonitoring
+            }
+        },
         title: { text: 'guou123.github.io' },
-        subtitle: { text: '实时访客统计' },
+        subtitle: { 
+            text: '数据初始化中...',
+            style: { color: '#666' }
+        },
         xAxis: {
-            categories: ['访问人数', '访问次数'],
-            title: { text: null }
+            categories: ['访问人数 (UV)', '访问次数 (PV)'],
+            labels: {
+                style: { fontSize: '12px' }
+            }
         },
-        yAxis: {
+        yAxis: { 
             min: 0,
-            title: { text: 'END', align: 'high' },
-            labels: { overflow: 'justify' }
+            title: { text: null }, // 移除Y轴标题
+            gridLineColor: '#eee' 
         },
-        tooltip: { valueSuffix: '次/人' },
         plotOptions: {
-            bar: { dataLabels: { enabled: true } }
+            bar: {
+                colorByPoint: true,
+                colors: ['#7cb5ec', '#434348'],
+                dataLabels: {
+                    enabled: true,
+                    format: '{y}',
+                    style: { textOutline: 'none' }
+                }
+            }
         },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
-            x: -40,
-            y: 100,
-            floating: true,
-            borderWidth: 1,
-            backgroundColor: '#FFFFFF',
-            shadow: true
-        },
-        credits: { enabled: false },
         series: [{
-            name: '用户数据',
-            data: [0, 0] // 初始为0
-        }]
+            name: '统计值',
+            data: [0, 0], // 必须初始化非空数据
+            showInLegend: false
+        }],
+        credits: { enabled: false }
     });
 
-    // 监控不蒜子数据变化
-    function observeBusuanzi() {
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-                if (mutation.type === 'characterData' || mutation.type === 'childList') {
-                    updateChartData();
-                }
+    // 初始化数据监控
+    function initDataMonitoring() {
+        // 等待不蒜子元素加载
+        const checkExist = setInterval(() => {
+            if ($('#busuanzi_value_site_uv').length && $('#busuanzi_value_site_pv').length) {
+                clearInterval(checkExist);
+                startObservation();
+                updateChart();
+            }
+        }, 200); // 每200ms检查一次
+
+        // 设置15秒超时
+        setTimeout(() => {
+            if (chart.series[0].data[0].y === 0) {
+                chart.update({
+                    subtitle: {
+                        text: '数据加载失败，请检查网络连接',
+                        style: { color: '#ff5555' }
+                    }
+                }, true);
+            }
+        }, 15000);
+    }
+
+    // 启动数据观察
+    function startObservation() {
+        const config = { 
+            childList: true, 
+            subtree: true, 
+            characterData: true 
+        };
+
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(() => {
+                updateChart();
             });
         });
 
-        // 监控两个统计元素
-        observer.observe(document.getElementById('busuanzi_value_site_uv'), {
-            characterData: true,
-            subtree: true
-        });
-        observer.observe(document.getElementById('busuanzi_value_site_pv'), {
-            characterData: true,
-            subtree: true
-        });
+        // 监控两个元素的内容变化
+        observer.observe(document.getElementById('busuanzi_value_site_uv'), config);
+        observer.observe(document.getElementById('busuanzi_value_site_pv'), config);
     }
 
     // 更新图表数据
-    function updateChartData() {
+    function updateChart() {
         const uv = parseInt($('#busuanzi_value_site_uv').text()) || 0;
         const pv = parseInt($('#busuanzi_value_site_pv').text()) || 0;
         
-        chart.series[0].setData([uv, pv], true); // 第二个参数触发重绘动画
-        chart.update({ subtitle: { text: `最后更新: ${new Date().toLocaleTimeString()}` }});
-    }
+        chart.series[0].update({
+            data: [uv, pv]
+        }, true);
 
-    // 初始化数据获取
-    function initData() {
-        // 如果10秒内未加载成功显示默认值
-        setTimeout(() => {
-            if (chart.series[0].data[0].y === 0) {
-                chart.series[0].setData([NaN, NaN]);
-                chart.update({ subtitle: { text: '数据加载超时' }});
+        chart.update({
+            subtitle: {
+                text: `最后更新于 ${new Date().toLocaleTimeString()}`,
+                style: { color: '#666' }
             }
-        }, 10000);
-
-        // 开始监控
-        observeBusuanzi();
-    }
-
-    // 等待不蒜子脚本加载
-    if (typeof busuanzi === 'undefined') {
-        window.onload = initData;
-    } else {
-        initData();
+        });
     }
 });
 </script>
