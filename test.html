@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网站访问统计图表</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.min.js"></script>
 </head>
 <body>
     <!-- 隐藏的不蒜子数据容器 -->
@@ -18,67 +18,56 @@
     <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 
     <script>
-        // 加载监控与容错处理
-        function loadScript(url, callback) {
-            var script = document.createElement('script');
-            script.src = url;
-            script.onload = callback;
-            document.head.appendChild(script);
-        }
-
-        window.addEventListener('DOMContentLoaded', function () {
-            var waitForJQuery = setInterval(function () {
-                if (typeof $ !== 'undefined') {
-                    clearInterval(waitForJQuery);
-                    initializeChart();
-                }
-            }, 100);
-
-            // 设置超时机制
-            setTimeout(() => {
-                if (typeof $ === 'undefined') {
-                    loadScript('https://code.jquery.com/jquery-3.6.0.min.js', function () {
-                        console.log('jQuery 被成功替代加载。');
-                        initializeChart();
-                    });
-                }
-            }, 10000);
-        });
-
-        function initializeChart() {
-            // 初始化 Highcharts 图表
+        // 等待DOM完全加载
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化图表
             var chart = Highcharts.chart('container', {
                 chart: {
-                    type: 'bar',
-                    events: { 
-                        load: initDataSetting
-                    }
+                    type: 'bar'
                 },
-                title: { text: '网站访问统计' },
-                subtitle: { text: '数据初始化中...' },
-                xAxis: { 
-                    categories: ['独立访客数 (UV)', '页面浏览量 (PV)'], 
-                    title: { text: null } 
+                title: {
+                    text: '网站访问统计'
+                },
+                subtitle: {
+                    text: '数据加载中...'
+                },
+                xAxis: {
+                    categories: ['独立访客 (UV)', '页面浏览量 (PV)']
                 },
                 yAxis: {
                     min: 0,
-                    title: { text: '数量' },
-                    stackLabels: { 
-                        enabled: true, 
-                        style: { fontWeight: 'bold', color: Highcharts.theme && Highcharts.theme.textColor || 'gray' } 
+                    title: {
+                        text: '数量'
+                    },
+                    stackLabels: {
+                        enabled: true,
+                        style: {
+                            fontWeight: 'bold',
+                            color: ((Highcharts.theme && Highcharts.theme.textColor) || 'gray')
+                        }
                     }
                 },
-                legend: { 
-                    align: 'right', 
-                    verticalAlign: 'middle', 
-                    layout: 'vertical' 
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
                 },
-                plotOptions: { 
-                    series: { 
-                        stacking: 'normal' 
-                    } 
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white'),
+                    shadow: true
                 },
-                credits: { enabled: false },
+                credits: {
+                    enabled: false
+                },
                 series: [{
                     name: 'UV',
                     data: [0]
@@ -88,38 +77,32 @@
                 }]
             });
 
-            function initDataSetting() {
-                // 监控不蒜子数据的变化
-                var observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        if (mutation.type === 'childList' || mutation.type === 'characterData') {
-                            updateData(chart);
-                        }
-                    });
-                });
-
-                var uvTarget = document.getElementById('busuanzi_value_site_uv');
-                var pvTarget = document.getElementById('busuanzi_value_site_pv');
-                observer.observe(uvTarget, { childList: true, characterData: true, subtree: true });
-                observer.observe(pvTarget, { childList: true, characterData: true, subtree: true });
-
-                // 初始数据加载
-                updateData(chart);
-            }
-
-            function updateData(chart) {
-                var uv = parseInt($('#busuanzi_value_site_uv').text()) || 0;
-                var pv = parseInt($('#busuanzi_value_site_pv').text()) || 0;
-
-                chart.series[0].update({ data: [uv] });
-                chart.series[1].update({ data: [pv] });
-                chart.update({
-                    subtitle: { 
-                        text: '数据更新于: ' + new Date().toLocaleTimeString()
+            // 使用MutationObserver监控不蒜子数据变化
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                        updateChart();
                     }
                 });
+            });
+
+            // 选择要观察变化的节点
+            var targetNodes = [document.getElementById('busuanzi_value_site_uv'), document.getElementById('busuanzi_value_site_pv')];
+            targetNodes.forEach(function(node) {
+                observer.observe(node, { childList: true, characterData: true, subtree: true });
+            });
+
+            // 定义更新图表数据的函数
+            function updateChart() {
+                var uv = parseInt($('#busuanzi_value_site_uv').text());
+                var pv = parseInt($('#busuanzi_value_site_pv').text());
+                chart.series[0].setData([uv]);
+                chart.series[1].setData([pv]);
             }
-        }
+
+            // 初始数据加载
+            updateChart();
+        });
     </script>
 </body>
 </html>
