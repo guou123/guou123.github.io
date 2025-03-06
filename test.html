@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网站访问统计图表</title>
-    <!-- 使用HTTPS的CDN资源 -->
+    <!-- 使用可靠的CDN加载jQuery和Highcharts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.min.js"></script>
+    <!-- 加载不蒜子统计脚本 -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body>
     <!-- 隐藏的不蒜子数据容器 -->
@@ -21,7 +22,7 @@
     <script>
         // 等待DOM完全加载
         document.addEventListener('DOMContentLoaded', function() {
-            // 初始化图表
+            // 初始化Highcharts图表
             var chart = Highcharts.chart('container', {
                 chart: {
                     type: 'bar'
@@ -71,10 +72,10 @@
                 },
                 series: [{
                     name: 'UV',
-                    data: [0]
+                    data: [0]  // 初始数据
                 }, {
                     name: 'PV',
-                    data: [0]
+                    data: [0]  // 初始数据
                 }]
             });
 
