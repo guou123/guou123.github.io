@@ -1,337 +1,433 @@
 <!doctype html>
 <html lang="zh">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <title>DJHblog</title>
-        <link rel="icon" type="image/png" href="https://guou123.github.io/icon.png">
+    <title>DJHblog</title>
+    <link rel="icon" type="image/png" href="https://guou123.github.io/icon.png">
 
-        <!-- CSS FILES -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+          rel="stylesheet">
 
-        <link href="https://guou123.github.io/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://guou123.github.io/css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="https://guou123.github.io/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://guou123.github.io/css/bootstrap-icons.css" rel="stylesheet">
 
-        <link href="https://guou123.github.io/css/templatemo-topic-listing.css" rel="stylesheet">
-<!--        <link href="https://guou123.github.io/other.css" rel="stylesheet">-->
+    <link href="https://guou123.github.io/css/templatemo-topic-listing.css" rel="stylesheet">
+    <!--        <link href="https://guou123.github.io/other.css" rel="stylesheet">-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .floating-box {
+            position: fixed;
 
-
-
-    </head>
-
-    <body id="top">
-
-        <main>
-
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-<!--                        <i class="bi-back"></i>-->
-                        <span>DJHblog</span>
-<!--                        <li style="cursor: pointer;">Home</li>-->
-                    </a>
-
-<!--                    <div class="d-lg-none ms-auto me-4">-->
-<!--                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>-->
-<!--                    </div>-->
-
-<!--                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                        <span class="navbar-toggler-icon"></span>-->
-<!--                    </button>-->
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">主页</a>
-<!--                                <li style="cursor: pointer;">Home</li>-->
-                            </li>
+            right: 20px;
+            width: 200px;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none; /* 默认隐藏 */
+            cursor: move; /* 指示可以拖动 */
+        }
+        .floating-box audio {
+            width: 100%;
+        }
+        .floating-box button {
+            margin-top: 10px;
+        }
 
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">工具选集</a>
-                            </li>
+    </style>
 
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">问题</a>
-                            </li>
+</head>
+
+<body id="top">
+
+<main>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!--                        <i class="bi-back"></i>-->
+                <span>DJHblog</span>
+                <!--                        <li style="cursor: pointer;">Home</li>-->
+            </a>
+
+            <!--                    <div class="d-lg-none ms-auto me-4">-->
+            <!--                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>-->
+            <!--                    </div>-->
+
+            <!--                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+            <!--                        <span class="navbar-toggler-icon"></span>-->
+            <!--                    </button>-->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_1">主页</a>
+                        <!--                                <li style="cursor: pointer;">Home</li>-->
+                    </li>
 
 
-                        </ul>
-
-<!--                        <div class="d-none d-lg-block">-->
-<!--                            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>-->
-<!--                        </div>-->
-                    </div>
-                </div>
-            </nav>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_2">工具选集</a>
+                    </li>
 
 
-            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
-                <div class="container">
-                    <div class="row">
-                    </div>
-                </div>
-            </section>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_3">问题</a>
+                    </li>
 
 
-            <section class="featured-section">
-                <div class="container">
-                    <div class="row justify-content-center">
+                </ul>
 
-                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-                            <div class="custom-block bg-white shadow-lg">
-                                <a href="https://github.com/guou123">
-                                    <div class="d-flex">
-                                        <div>
-                                            <h5 class="mb-2">下载中心</h5>
-
-                                            <p class="mb-0">你需要的工具都在这</p>
-                                        </div>
-
-                                        <span class="badge bg-design rounded-pill ms-auto">戳</span>
-                                    </div>
-
-                                    <img src="https://guou123.github.io/images/image01.png" class="custom-block-image img-fluid" alt="">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="custom-block bg-white shadow-lg">
-                                <a href="https://www.cnblogs.com/djhhappy">
-                                    <div class="d-flex">
-                                        <div>
-                                            <h5 class="mb-2">博客</h5>
-
-                                            <p class="mb-0">我的博客</p>
-                                        </div>
-
-                                        <span class="badge bg-design rounded-pill ms-auto">戳</span>
-                                    </div>
-
-                                    <img src="https://guou123.github.io/images/image02.png" class="custom-block-image img-fluid" alt="">
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+                <!--                        <div class="d-none d-lg-block">-->
+                <!--                            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>-->
+                <!--                        </div>-->
+            </div>
+        </div>
+    </nav>
 
 
+    <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </section>
 
+<div class="floating-box" id="floating-box">
+    <h3>音乐播放器</h3>
+    <p id="filename"></p> <!-- 文件名将在这里显示 -->
+    <audio controls id="audio-player">
+        <source src="https://er-sycdn.kuwo.cn/fc248ff8f31cb212e25b45a184175d13/67cc2438/resource/30106/trackmedia/M800001em6GB0LiCvz.mp3"
+                type="audio/mpeg">
+        您的浏览器不支持 audio 元素。
+    </audio>
+<!--    <button onclick="closeFloatingBox()">x</button>-->
+    <a href="#" onclick="closeFloatingBox(); return false;">X</a>
+</div>
+    <section class="featured-section">
+        <div class="container">
+            <div class="row justify-content-center">
 
-            <section class="timeline-section section-padding" id="section_2">
-                <div class="section-overlay"></div>
+                <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block bg-white shadow-lg">
+                        <a href="https://github.com/guou123">
+                            <div class="d-flex">
+                                <div>
+                                    <h5 class="mb-2">下载中心</h5>
 
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-12 text-center">
-                            <h2>工具选集</h2>
-                        </div>
-
-                        <div class="col-lg-10 col-12 mx-auto">
-                            <div class="timeline-container">
-                                <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
-                                    <div class="list-progress">
-                                        <div class="inner"></div>
-                                    </div>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">money free 的工具</h4>
-
-<!--                                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, cumque magnam? Sequi, cupiditate quibusdam alias illum sed esse ad dignissimos libero sunt, quisquam numquam aliquam? Voluptas, accusamus omnis?</p>-->
-                                        <a href="https://tool.geekfa.com/">geekfa</a>
-                                        <a href="https://tool.liumingye.cn/">liumingye</a><p class="text-white">亲测好用</p>
-                                        <div class="icon-holder">
-<!--                                          <i class="bi-search"></i>-->
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">问卷调查</h4>
-
-<!--                                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis est vel quo, nihil repellat quia velit error modi earum similique odit labore. Doloremque, repudiandae?</p>-->
-
-                                            <button onclick='window.open("https://www.wjx.cn/vm/to3Fuiy.aspx# ")' type="button" id="add" class="niceButton4">问卷调查</button>
-
-
-<!--                                        <button class="niceButton4">1111</button>-->
-                                        <div class="icon-holder">
-<!--                                          <i class="bi-bookmark"></i>-->
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <h4 class="text-white mb-3">沙雕入口</h4>
-
-                                        <a href="https://guou123.github.io/shadiao">点击进入</a>
-                                        <div class="icon-holder">
-<!--                                          <i class="bi-book"></i>-->
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4 class="text-white mb-3">项目源代码</h4>
-                                        <a href="https://github.com/guou123/guou123.github.io/">点击进入</a>
-
-                                        <div class="icon-holder">
-<!--                                          <i class="bi-bookmark"></i>-->
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4 class="text-white mb-3">访问人数</h4>
-                                        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                                        <p class="text-white">本站总访问量<span id="busuanzi_value_site_pv"></span>次</p>
-                                        <p class="text-white">本站总访问人数量<span id="busuanzi_value_site_uv"></span>次</p>
-<!--                                        本站访客数<span id="busuanzi_value_site_uv"></span>人次-->
-                                        <div class="icon-holder">
-<!--                                          <i class="bi-bookmark"></i>-->
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="faq-section section-padding" id="section_3">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-12">
-                            <h2 class="mb-4">回答问题</h2>
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-lg-5 col-12">
-                            <img src="https://guou123.github.io/images/image03.jpg" class="img-fluid" alt="FAQs">
-                        </div>
-
-                        <div class="col-lg-6 col-12 m-auto">
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        我们在聆听你的意见
-                                        </button>
-                                    </h2>
-
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            我会聆听你的意见
-                                        </div>
-                                    </div>
+                                    <p class="mb-0">你需要的工具都在这</p>
                                 </div>
 
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                        如何找到我?
-                                    </button>
-                                    </h2>
-
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            在bing上搜索 <a href="https://cn.bing.com/search?q=guou123.github.io">DJHblog</a>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <span class="badge bg-design rounded-pill ms-auto">戳</span>
                             </div>
-                        </div>
 
-                    </div>
-                </div>
-            </section>
-
-
-
-        </main>
-
-<footer class="site-footer section-padding">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="#">
-<!--                            <i class="bi-back"></i>-->
-                            <span>DJHblog</span>
+                            <img src="https://guou123.github.io/images/image01.png" class="custom-block-image img-fluid"
+                                 alt="">
                         </a>
                     </div>
+                </div>
 
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <h6 class="site-footer-title mb-3">Resources</h6>
+                <div class="col-lg-6 col-12">
+                    <div class="custom-block bg-white shadow-lg">
+                        <a href="https://www.cnblogs.com/djhhappy">
+                            <div class="d-flex">
+                                <div>
+                                    <h5 class="mb-2">博客</h5>
 
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Home</a>
+                                    <p class="mb-0">我的博客</p>
+                                </div>
+
+                                <span class="badge bg-design rounded-pill ms-auto">戳</span>
+                            </div>
+
+                            <img src="https://guou123.github.io/images/image02.png" class="custom-block-image img-fluid"
+                                 alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="timeline-section section-padding" id="section_2">
+        <div class="section-overlay"></div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 text-center">
+                    <h2>工具选集</h2>
+                </div>
+
+                <div class="col-lg-10 col-12 mx-auto">
+                    <div class="timeline-container">
+                        <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                            <div class="list-progress">
+                                <div class="inner"></div>
+                            </div>
+
+                            <li>
+                                <h4 class="text-white mb-3">money free 的工具</h4>
+
+                                <!--                                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, cumque magnam? Sequi, cupiditate quibusdam alias illum sed esse ad dignissimos libero sunt, quisquam numquam aliquam? Voluptas, accusamus omnis?</p>-->
+                                <a href="https://tool.geekfa.com/">geekfa</a>
+                                <a href="https://tool.liumingye.cn/">liumingye</a>
+                                <p class="text-white">亲测好用</p>
+                                <div class="icon-holder">
+                                    <!--                                          <i class="bi-search"></i>-->
+                                </div>
                             </li>
 
-                            <li class="site-footer-link-item">
-                                <a href="https://github.com/guou123" class="site-footer-link">Downloads</a>
-                            </li>
-                            <li class="site-footer-link-item">
-                                <a href="https://guou123.github.io/enter01" class="site-footer-link">Background</a>
-                            </li>
-                            <li class="site-footer-link-item">
-                                <a href="https://guou123.github.io/helpme" class="site-footer-link">Help me grab a bite</a>
-                            </li>
+                            <li>
+                                <h4 class="text-white mb-3">问卷调查</h4>
+
+                                <!--                                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis est vel quo, nihil repellat quia velit error modi earum similique odit labore. Doloremque, repudiandae?</p>-->
+
+                                <button onclick='window.open("https://www.wjx.cn/vm/to3Fuiy.aspx# ")' type="button"
+                                        id="add" class="niceButton4">问卷调查
+                                </button>
 
 
+                                <!--                                        <button class="niceButton4">1111</button>-->
+                                <div class="icon-holder">
+                                    <!--                                          <i class="bi-bookmark"></i>-->
+                                </div>
+                            </li>
+
+                            <li>
+                                <h4 class="text-white mb-3">沙雕入口</h4>
+
+                                <a href="https://guou123.github.io/shadiao">点击进入</a>
+                                <div class="icon-holder">
+                                    <!--                                          <i class="bi-book"></i>-->
+                                </div>
+                            </li>
+                            <li>
+                                <h4 class="text-white mb-3">项目源代码</h4>
+                                <a href="https://github.com/guou123/guou123.github.io/">点击进入</a>
+
+                                <div class="icon-holder">
+                                    <!--                                          <i class="bi-bookmark"></i>-->
+                                </div>
+                            </li>
+                            <li>
+                                <h4 class="text-white mb-3">访问人数</h4>
+                                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                                <p class="text-white">本站总访问量<span id="busuanzi_value_site_pv"></span>次</p>
+                                <p class="text-white">本站总访问人数量<span id="busuanzi_value_site_uv"></span>次</p>
+                                <!--                                        本站访客数<span id="busuanzi_value_site_uv"></span>人次-->
+                                <div class="icon-holder">
+                                    <!--                                          <i class="bi-bookmark"></i>-->
+                                </div>
+                            </li>
                         </ul>
                     </div>
+                </div>
 
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="site-footer-title mb-3">Information</h6>
 
-                        <p class="text-white d-flex mb-1">
+            </div>
+        </div>
+    </section>
 
-                        </p>
 
-                        <p class="text-white d-flex">
-                            <a href="mailto:723561055@qq.com" class="site-footer-link">
-                                723561055@qq.com
-                            </a>
-                        </p>
-                    </div>
+    <section class="faq-section section-padding" id="section_3">
+        <div class="container">
+            <div class="row">
 
-                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                        <div class="dropdown">
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4">回答问题</h2>
+                </div>
 
+                <div class="clearfix"></div>
+
+                <div class="col-lg-5 col-12">
+                    <img src="https://guou123.github.io/images/image03.jpg" class="img-fluid" alt="FAQs">
+                </div>
+
+                <div class="col-lg-6 col-12 m-auto">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    我们在聆听你的意见
+                                </button>
+                            </h2>
+
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    我会聆听你的意见
+                                </div>
+                            </div>
                         </div>
 
-                        <p class="copyright-text mt-lg-5 mt-4">&copy; 2025 DJHblog. All rights reserved.
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    如何找到我?
+                                </button>
+                            </h2>
 
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    在bing上搜索 <a href="https://cn.bing.com/search?q=guou123.github.io">DJHblog</a>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4104292724882974"
+            crossorigin="anonymous"></script>
+
+
+</main>
+<button onclick="showFloatingBox()">显示音乐框</button>
+
+<footer class="site-footer section-padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-12 mb-4 pb-2">
+                <a class="navbar-brand mb-2" href="#">
+                    <!--                            <i class="bi-back"></i>-->
+                    <span>DJHblog</span>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-6">
+                <h6 class="site-footer-title mb-3">Resources</h6>
+
+                <ul class="site-footer-links">
+                    <li class="site-footer-link-item">
+                        <a href="#" class="site-footer-link">Home</a>
+                    </li>
+
+                    <li class="site-footer-link-item">
+                        <a href="https://github.com/guou123" class="site-footer-link">Downloads</a>
+                    </li>
+                    <li class="site-footer-link-item">
+                        <a href="https://guou123.github.io/enter01" class="site-footer-link">Background</a>
+                    </li>
+                    <li class="site-footer-link-item">
+                        <a href="https://guou123.github.io/helpme" class="site-footer-link">Help me grab a bite</a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                <h6 class="site-footer-title mb-3">Information</h6>
+
+                <p class="text-white d-flex mb-1">
+
+                </p>
+
+                <p class="text-white d-flex">
+                    <a href="mailto:723561055@qq.com" class="site-footer-link">
+                        723561055@qq.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                <div class="dropdown">
 
                 </div>
+
+                <p class="copyright-text mt-lg-5 mt-4">&copy; 2025 DJHblog. All rights reserved.
+
+
             </div>
-        </footer>
+
+        </div>
+    </div>
+</footer>
 
 
+<script src="https://guou123.github.io/js/jquery.min.js"></script>
+<script src="https://guou123.github.io/js/bootstrap.bundle.min.js"></script>
+<script src="https://guou123.github.io/js/jquery.sticky.js"></script>
+<script src="https://guou123.github.io/js/click-scroll.js"></script>
+<script src="https://guou123.github.io/js/custom.js"></script>
+<script>
+    let floatingBox = document.getElementById('floating-box');
+    let isDragging = false;
+    let offsetX, offsetY;
+    let audioPlayer = document.getElementById('audio-player');
+    let filenameDisplay = document.getElementById('filename');
 
-        <script src="https://guou123.github.io/js/jquery.min.js"></script>
-        <script src="https://guou123.github.io/js/bootstrap.bundle.min.js"></script>
-        <script src="https://guou123.github.io/js/jquery.sticky.js"></script>
-        <script src="https://guou123.github.io/js/click-scroll.js"></script>
-        <script src="https://guou123.github.io/js/custom.js"></script>
+    // 初始化文件名显示
+    updateFilenameDisplay();
 
-    </body>
+    // 监听音频源变化，更新文件名显示
+    audioPlayer.addEventListener('srcchange', updateFilenameDisplay);
+
+    floatingBox.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        offsetX = e.clientX - floatingBox.offsetLeft;
+        offsetY = e.clientY - floatingBox.offsetTop;
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            floatingBox.style.left = (e.clientX - offsetX) + 'px';
+            floatingBox.style.top = (e.clientY - offsetY) + 'px';
+        }
+    });
+
+    document.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+
+    function showFloatingBox() {
+        floatingBox.style.display = "block";
+    }
+
+    function closeFloatingBox() {
+        floatingBox.style.display = "none";
+    }
+
+    function updateFilenameDisplay() {
+        if (audioPlayer.src) {
+            filenameDisplay.textContent = '当前播放: ' + getFilenameFromUrl(audioPlayer.src);
+        } else {
+            filenameDisplay.textContent = '当前播放: 未知文件';
+        }
+    }
+
+    function getFilenameFromUrl(url) {
+        // 从URL中提取文件名
+        return url.substring(url.lastIndexOf('/') + 1);
+    }
+
+</script>
+
+
+</body>
 </html>
