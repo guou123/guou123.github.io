@@ -109,15 +109,16 @@
     </section>
 
 <div class="floating-box" id="floating-box">
+
     <h3>音乐播放器</h3>
+<!--    <button onclick=""></button>-->
     <p id="filename"></p> <!-- 文件名将在这里显示 -->
     <audio controls id="audio-player">
         <source src="https://er-sycdn.kuwo.cn/fc248ff8f31cb212e25b45a184175d13/67cc2438/resource/30106/trackmedia/M800001em6GB0LiCvz.mp3"
                 type="audio/mpeg">
         您的浏览器不支持 audio 元素。
     </audio>
-<!--    <button onclick="closeFloatingBox()">x</button>-->
-    <a href="#" onclick="closeFloatingBox(); return false;">X</a>
+    <a href="#" onclick="toggleFloatingBox(); return false;">戳</a>
 </div>
     <section class="featured-section">
         <div class="container">
@@ -141,10 +142,9 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="col-lg-6 col-12">
+                 <div class="col-lg-4 col-12 mb-4 mb-lg-0">
                     <div class="custom-block bg-white shadow-lg">
-                        <a href="https://www.cnblogs.com/djhhappy">
+                        <a href="https://github.com/guou123">
                             <div class="d-flex">
                                 <div>
                                     <h5 class="mb-2">博客</h5>
@@ -160,6 +160,26 @@
                         </a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block bg-white shadow-lg">
+                        <a href="https://space.bilibili.com/3546868309035229?spm_id_from=333.337.0.0">
+                            <div class="d-flex">
+                                <div>
+                                    <h5 class="mb-2">BLIBLI</h5>
+
+                                    <p class="mb-0">我的视频账号</p>
+                                </div>
+
+                                <span class="badge bg-design rounded-pill ms-auto">戳</span>
+                            </div>
+
+                            <img src="https://guou123.github.io/images/image01.png" class="custom-block-image img-fluid"
+                                 alt="">
+                        </a>
+                    </div>
+                </div>
+
+
 
             </div>
         </div>
@@ -377,54 +397,21 @@
 <script src="https://guou123.github.io/js/custom.js"></script>
 <script>
     let floatingBox = document.getElementById('floating-box');
-    let isDragging = false;
-    let offsetX, offsetY;
-    let audioPlayer = document.getElementById('audio-player');
-    let filenameDisplay = document.getElementById('filename');
+        let isExpanded = false;
 
-    // 初始化文件名显示
-    updateFilenameDisplay();
-
-    // 监听音频源变化，更新文件名显示
-    audioPlayer.addEventListener('srcchange', updateFilenameDisplay);
-
-    floatingBox.addEventListener('mousedown', function(e) {
-        isDragging = true;
-        offsetX = e.clientX - floatingBox.offsetLeft;
-        offsetY = e.clientY - floatingBox.offsetTop;
-    });
-
-    document.addEventListener('mousemove', function(e) {
-        if (isDragging) {
-            floatingBox.style.left = (e.clientX - offsetX) + 'px';
-            floatingBox.style.top = (e.clientY - offsetY) + 'px';
+        function toggleFloatingBox() {
+            isExpanded = !isExpanded;
+            if (isExpanded) {
+                floatingBox.classList.add('expanded');
+            } else {
+                floatingBox.classList.remove('expanded');
+            }
         }
-    });
 
-    document.addEventListener('mouseup', function() {
-        isDragging = false;
-    });
-
-    function showFloatingBox() {
-        floatingBox.style.display = "block";
-    }
-
-    function closeFloatingBox() {
-        floatingBox.style.display = "none";
-    }
-
-    function updateFilenameDisplay() {
-        if (audioPlayer.src) {
-            filenameDisplay.textContent = '当前播放: ' + getFilenameFromUrl(audioPlayer.src);
-        } else {
-            filenameDisplay.textContent = '当前播放: 未知文件';
+        function closeFloatingBox() {
+            isExpanded = false;
+            floatingBox.classList.remove('expanded');
         }
-    }
-
-    function getFilenameFromUrl(url) {
-        // 从URL中提取文件名
-        return url.substring(url.lastIndexOf('/') + 1);
-    }
 
 </script>
 
